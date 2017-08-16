@@ -1,5 +1,7 @@
 class CitiesController < ApplicationController
+    before_action :auth_admin
    def index
+    #   binding.pry
        @cities= City.all
    end
    def new
