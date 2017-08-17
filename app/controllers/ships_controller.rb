@@ -17,13 +17,14 @@ class ShipsController < ApplicationController
     end
   end
   
-    def destroy
+  def destroy
         @ship = Ship.find(params[:id])
-    if @ship.destroy
-      redirect_to ships_path
-    else
-      render 'new'
-    end
+        @ship.destroy
+        redirect_to ships_path
+  end
+  
+  def show
+      @ship = Ship.find(params[:id])
   end
   
 end
